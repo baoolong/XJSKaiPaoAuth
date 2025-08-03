@@ -1,0 +1,83 @@
+﻿<Window x:Class="XJSKaiPaoAuth.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XJSKaiPaoAuth"
+        mc:Ignorable="d"
+        Title="激活工具" Height="450" Width="600"
+        WindowStyle="None" AllowsTransparency="True" Background="#00000000">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/styles/MacOSButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <!-- 圆角边框 -->
+    <Border CornerRadius="10" Background="White" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- 自定义标题栏 -->
+            <Border Grid.Row="0"  Height="30" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"
+                  Background="#2C3E50" CornerRadius="10,10,0,0">
+                <DockPanel VerticalAlignment="Top" Height="33" LastChildFill="True">
+                    
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,10,0">
+                        <Button Content="─" Width="30" Height="30" Background="Transparent" Foreground="White" BorderThickness="0" Click="MinimizeButton_Click" x:Name="MinimizeButton"/>
+                        <Button Content="□" Width="30" Height="30" Background="Transparent" Foreground="White" BorderThickness="0" Click="MaximizeButton_Click" x:Name="MaximizeButton"/>
+                        <Button Content="✕" Width="30" Height="30" Background="Transparent" Foreground="White" BorderThickness="0" Click="CloseButton_Click" x:Name="CloseButton"/>
+                    </StackPanel>
+
+                    <TextBlock Text="激活工具" Foreground="White" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                </DockPanel>
+            </Border>
+
+            <!-- 主内容区域 -->
+            <Grid Grid.Row="1" Margin="20" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 激活时长选择器 -->
+                <Label Grid.Row="0" Grid.Column="0" Content="激活时长(月):" Margin="0,10,10,0"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" Margin="0,10,20,0" Name="cmbDuration" SelectedIndex="0">
+                    <ComboBoxItem>1</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+                    <ComboBoxItem>6</ComboBoxItem>
+                    <ComboBoxItem>12</ComboBoxItem>
+                </ComboBox>
+
+                <!-- 机器码输入 -->
+                <Label Grid.Row="1" Grid.Column="0" Content="机器码:" Margin="0,10,10,0"/>
+                <Border  BorderThickness="1" BorderBrush="Aqua" CornerRadius="6" Margin="0,15,20,0" Grid.Row="1" Grid.Column="1">
+                    <TextBox Name="txtMachineCode" Height="110"
+                         BorderThickness="0" Margin="6"/>
+                </Border>
+
+                <!-- 生成按钮 -->
+                <Button Grid.Row="2" Grid.Column="1" Content="生成激活码" Margin="0,10,20,0" Name="btnGenerate" Height="30"
+                        Style="{StaticResource MacOSButtonStyle}" Tag="Primary"/>
+
+                <!-- 激活码输出 -->
+                <Label Grid.Row="3" Grid.Column="0" Content="激活码:" Margin="0,10,10,0"/>
+                <Border  BorderThickness="1" BorderBrush="Aqua" CornerRadius="6" Margin="0,15,20,0" Grid.Row="3" Grid.Column="1">
+                    <TextBox  Name="txtActivationCode" Height="110" IsReadOnly="True"
+                         BorderThickness="0" Margin="6"/>
+                </Border>
+
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

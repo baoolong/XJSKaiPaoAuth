@@ -1,0 +1,17 @@
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\XJSKaiPaoAuth.csproj.AssemblyReference.cache
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\MainWindow.g.cs
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\App.g.cs
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\XJSKaiPaoAuth_MarkupCompile.cache
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\XJSKaiPaoAuth_MarkupCompile.lref
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\bin\Debug\XJSKaiPaoAuth.exe.config
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\bin\Debug\XJSKaiPaoAuth.exe
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\bin\Debug\XJSKaiPaoAuth.pdb
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\MainWindow.baml
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\XJSKaiPaoAuth.g.resources
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\XJSKaiPaoAuth.Properties.Resources.resources
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\XJSKaiPaoAuth.csproj.GenerateResource.cache
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\XJSKaiPaoAuth.csproj.CoreCompileInputs.cache
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\XJSKaiPaoAuth.exe
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\XJSKaiPaoAuth.pdb
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\XJSKaiPaoAuth.exe.config
+D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\obj\Debug\styles\MacOSButtonStyle.baml

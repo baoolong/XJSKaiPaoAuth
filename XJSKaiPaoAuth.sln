@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XJSKaiPaoAuth", "XJSKaiPaoAuth\XJSKaiPaoAuth.csproj", "{B027761D-074E-4C94-B2E4-7430A403FEAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B027761D-074E-4C94-B2E4-7430A403FEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B027761D-074E-4C94-B2E4-7430A403FEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B027761D-074E-4C94-B2E4-7430A403FEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B027761D-074E-4C94-B2E4-7430A403FEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D060A71A-AD55-483F-B2A1-CBCAEEC4AEB2}
+	EndGlobalSection
+EndGlobal
