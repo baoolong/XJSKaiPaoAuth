@@ -63,7 +63,7 @@
                 <Label Grid.Row="1" Grid.Column="0" Content="机器码:" Margin="0,10,10,0"/>
                 <Border  BorderThickness="1" BorderBrush="Aqua" CornerRadius="6" Margin="0,15,20,0" Grid.Row="1" Grid.Column="1">
                     <TextBox Name="txtMachineCode" Height="110"
-                         BorderThickness="0" Margin="6"/>
+                         BorderThickness="0" Margin="6" TextWrapping="Wrap"/>
                 </Border>
 
                 <!-- 生成按钮 -->
@@ -74,7 +74,7 @@
                 <Label Grid.Row="3" Grid.Column="0" Content="激活码:" Margin="0,10,10,0"/>
                 <Border  BorderThickness="1" BorderBrush="Aqua" CornerRadius="6" Margin="0,15,20,0" Grid.Row="3" Grid.Column="1">
                     <TextBox  Name="txtActivationCode" Height="110" IsReadOnly="True"
-                         BorderThickness="0" Margin="6"/>
+                         BorderThickness="0" Margin="6" TextWrapping="Wrap"/>
                 </Border>
 
             </Grid>
