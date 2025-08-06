@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XJSKaiPaoAuth"
         mc:Ignorable="d"
-        Title="激活工具" Height="450" Width="600"
+        Title="激活工具" Height="538" Width="600"
         WindowStyle="None" AllowsTransparency="True" Background="#00000000">
     <Window.Resources>
         <ResourceDictionary>
@@ -39,6 +39,9 @@
             <!-- 主内容区域 -->
             <Grid Grid.Row="1" Margin="20" Background="White">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -77,6 +80,9 @@
                          BorderThickness="0" Margin="6" TextWrapping="Wrap"/>
                 </Border>
 
+                <Label Grid.Row="4" Grid.Column="1" Content="COU序号: *******" FontSize="16" x:Name="CPUSerial" Margin="0,3"/>
+                <Label Grid.Row="5" Grid.Column="1" Content="硬盘序号: *******" FontSize="16" x:Name="DiskSerial"  Margin="0,3"/>
+                <Label Grid.Row="6" Grid.Column="1" Content="到期时间: *******" FontSize="16" x:Name="ExpirationTime"  Margin="0,3"/>
             </Grid>
         </Grid>
     </Border>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -29,6 +30,12 @@ namespace XJSKaiPaoAuth
             MinimizeButton.Click += MinimizeButton_Click;
             MaximizeButton.Click += MaximizeButton_Click;
             CloseButton.Click += CloseButton_Click;
+            new Thread(() =>
+            {
+                // 清理365天前的日志
+                Logger.CleanOldLogs(365);
+            }).Start();
+
         }
 
         // 窗口拖动功能
@@ -73,7 +80,7 @@ namespace XJSKaiPaoAuth
                 MessageBox.Show("请输入机器码");
                 return;
             }
-
+            Logger.Info($"\r\n\t生成激活码\r\n\t机器码：{machineCode}\r\n\t时长：{duration}月");
             machineCode = machineCode.Replace("-", "");
             // 生成激活码 (这里使用简单的逻辑，实际应用中应使用更复杂的加密算法)
             string activationCode = GenerateActivationCode(machineCode, duration);
@@ -98,6 +105,7 @@ namespace XJSKaiPaoAuth
                     .Select(s => s[random.Next(s.Length)]).ToArray());
             }
             
+            
             try
             {
                 using (AESEncryptionManager rsaManager = new AESEncryptionManager())
@@ -114,6 +122,8 @@ namespace XJSKaiPaoAuth
                     }
                     else
                     {
+                        Logger.Error($"机器码格式不正确，解析异常！");
+
                         // 处理分隔符不符合预期的情况
                         MessageBox.Show("机器码格式不正确，请重新输入");
                         return string.Empty;
@@ -136,9 +146,16 @@ namespace XJSKaiPaoAuth
                     + ObfuscatedCharsMiddle2
                     + "**DISKID**" + diskSerial + "**DISKID**" 
                     + ObfuscatedCharsEnd;
-                     
+
+                    CPUSerial.Content = "COU序号：" + cpuSerial;
+                    DiskSerial.Content = "硬盘序号：" + diskSerial;
+                    ExpirationTime.Content = "到期时间：" + expirationDate.ToString("yyyy-MM-dd");
+
                     // 加密并返回激活码
                     string  EncryptuniqueId = rsaManager.Encrypt(uniqueId);
+                    
+
+
 
                     // 格式化输出，每4个字符添加一个连字符
                     StringBuilder sb = new StringBuilder();
@@ -150,11 +167,14 @@ namespace XJSKaiPaoAuth
                             sb.Append("-");
                         }
                     }
+                    Logger.Info($"\r\n\t生成激活码：{sb.ToString()}" +
+                    $"\r\n\tCPU序号：{cpuSerial}\r\n\t硬盘序号：{diskSerial}\r\n\t过期时间：{expirationDate:yyyy-MM-dd}");
                     return sb.ToString();
                 }
             }
             catch (Exception ex)
             {
+                Logger.Error($"生成激活码时出错: {ex.Message}");
                 MessageBox.Show($"生成激活码时出错: {ex.Message}", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
                 return string.Empty;
             }
