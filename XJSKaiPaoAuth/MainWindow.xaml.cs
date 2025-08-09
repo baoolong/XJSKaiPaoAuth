@@ -87,9 +87,17 @@ namespace XJSKaiPaoAuth
 
             // 显示激活码
             txtActivationCode.Text = activationCode;
-            // 复制到剪贴板
-            Clipboard.SetText(activationCode);
-            MessageBox.Show("激活码已复制到剪贴板");
+            try
+            {
+                // 复制到剪贴板
+                Clipboard.SetText(activationCode);
+                MessageBox.Show("激活码已复制到剪贴板");
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"复制激活码到剪贴板时出错: {ex.Message}");
+                MessageBox.Show($"复制激活码到剪贴板时出错: 请手动复制", "错误", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private string GenerateActivationCode(string machineCode, int duration)

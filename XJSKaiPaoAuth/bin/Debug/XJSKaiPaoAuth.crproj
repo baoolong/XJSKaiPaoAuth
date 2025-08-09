@@ -1,0 +1,6 @@
+<project outputDir="D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\bin\Debug\Confused" baseDir="D:\VSWorksapce\XJSKaiPaoAuth\XJSKaiPaoAuth\bin\Debug" xmlns="http://confuser.codeplex.com">
+  <packer id="compressor" />
+  <module path="XJSKaiPaoAuth.exe">
+    <rule pattern="true" inherit="false" />
+  </module>
+</project>
